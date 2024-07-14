@@ -103,7 +103,7 @@ function provisioning_start() {
      
     PLATFORM_FLAGS=""
     if [[ $XPU_TARGET = "CPU" ]]; then
-        PLATFORM_FLAGS="--use-cpu all --skip-torch-cuda-test --no-half"
+        PLATFORM_FLAGS="--use-cpu all --skip-torch-cuda-test --no-half --share"
     fi
     PROVISIONING_FLAGS="--skip-python-version-check --no-download-sd-model --do-not-download-clip --port 11404 --exit"
     FLAGS_COMBINED="${PLATFORM_FLAGS} $(cat /etc/a1111_webui_flags.conf) ${PROVISIONING_FLAGS}"
